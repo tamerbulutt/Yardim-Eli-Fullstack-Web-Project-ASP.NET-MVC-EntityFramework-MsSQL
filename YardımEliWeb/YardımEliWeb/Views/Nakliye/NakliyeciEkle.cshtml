@@ -1,0 +1,191 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Nakliye Firması Ekle</title>
+    <link href="~/web/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <script src="~/web/js/jquery.min.js"></script>
+    <link href="~/web/css/style.css" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" type="text/css" href="~/web/css/magnific-popup.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    </script>
+    <script type="text/javascript" src="~/web/js/move-top.js"></script>
+    <script type="text/javascript" src="~/web/js/easing.js"></script>
+
+    <script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+    </script>
+
+    <link href='http://fonts.googleapis.com/css?family=Arimo:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700|Open+Sans:400italic,600italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <script>
+			$(function() {
+				var pull 		= $('#pull');
+					menu 		= $('nav ul');
+					menuHeight	= menu.height();
+				$(pull).on('click', function(e) {
+					e.preventDefault();
+					menu.slideToggle();
+				});
+				$(window).resize(function(){
+	        		var w = $(window).width();
+	        		if(w > 320 && menu.is(':hidden')) {
+	        			menu.removeAttr('style');
+	        		}
+	    		});
+			});
+    </script>
+</head>
+<body>
+    <div class="what">
+        <div class="header">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="~/web/images/logo.png" title="Help hand" />
+                        <h1>Yardım Eli</h1><span>İletişim: yardimeli@gmail.com</span>
+                    </a>
+                </div>
+
+                <div class="top-nav">
+                    <span class="menu"> </span>
+                    <ul>
+                        <li><a href="/Default/Index">Anasayfa</a></li>
+                        <li><a href="/Bilgilendirme/Info">Bİlgİlendİrme</a></li>
+                        <li class="active"><a href="/Nakliye/NakliyeciEkle">Naklİye</a></li>
+                        <li><a href="/AllDonates/DonateList">Yapılan Bağışlar</a></li>
+                        <div class="clearfix"> </div>
+                    </ul>
+                </div>
+                <div class="search-box">
+                    <div id="sb-search" class="sb-search">
+                        <form>
+                            <input class="sb-search-input" placeholder="Aramak istediğinizi buraya giriniz.." type="search" name="search" id="search">
+                            <input class="sb-search-submit" type="submit" value="">
+                            <span class="sb-icon-search"> </span>
+                        </form>
+                    </div>
+                </div>
+                <script src="~/web/js/classie.js"></script>
+                <script src="~/web/js/uisearch.js"></script>
+                <script>
+                    new UISearch(document.getElementById('sb-search'));
+                </script>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                $("span.menu").click(function () {
+                    $(".top-nav ul").slideToggle(300);
+                });
+            });
+        </script>
+
+        <div class="clearfix"> </div>
+    </div>
+    <div class="donate">
+        <div class="container">
+            <div class="ad728x90" style="text-align:center">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:728px;height:90px"
+                     data-ad-client="ca-pub-9153409599391170"
+                     data-ad-slot="8639520288"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+
+            <div class="donate-main">
+                <div class="col-md-8 donate-right">
+                    <div class="donate-top">
+                        <h3>Fİrma Bİlgİlerİ</h3>
+                        <form action="#" method="post">
+
+                            <div>
+                                <span>Yetkili Adı<label>:</label></span>
+                                <input type="text" required="" name="firmaYetkiliAd">
+                            </div>
+                            <div class="clearfix"> </div>
+                            <div>
+                                <span>Yetkili Soyadı<label>:</label></span>
+                                <input type="text" required="" name="firmaYetkiliSoyad">
+                            </div>
+                            <div class="clearfix"> </div>
+                            <div>
+                                <span>Firma Ad<label>:</label></span>
+                                <input type="text" required="" name="firmaAd">
+                            </div>
+                            <div class="clearfix"> </div>
+                            <div>
+                                <span>Firma Şehir<label>:</label></span>
+                                <input type="text" required="" name="firmaSehir">
+                            </div>
+                            <div class="clearfix"> </div>
+                            <div>
+                                <span>Km Başına Ücret<label>:</label></span>
+                                <input type="text" required="" name="kmBasinaUcret">
+                            </div>
+                            <div class="clearfix"> </div>
+                            <div>
+                                <span>Telefon No<label>:</label></span>
+                                <input type="text" required="" name="telefonNo">
+                            </div>
+                            <div class="clearfix"> </div>
+                            <input type="submit" value="Fİrma Ekle">
+
+                        </form>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+   
+    <div class="footer">
+        <div class="container">
+
+            <div class="footer-grids">
+                <div class="col-md-4 footer-grid-icons">
+                    <h3>Bİzİ Takİp Edİn:</h3>
+                    <ul>
+                        <li><a class="twitter" href="#"><span> </span></a></li>
+                        <li><a class="fb" href="#"><span> </span></a></li>
+                        <li><a class="you" href="#"><span> </span></a></li>
+                        <li><a class="in" href="#"><span> </span></a></li>
+                        <div class="clearfix"> </div>
+                    </ul>
+                </div>
+                <div class="col-md-4 footer-grid-text">
+                    <h3>Farklı Bağış Yöntemlerini Dene</h3>
+                    <p>Nakit bağış yapmak istemiyorsan , eşya bağışı yaparak katkı sağlayabilirsin.</p>
+                    form method="post" action="contact-post.html">
+                    <a class="sign-btn" href="/ObjectDonater/EsyaBagisYap">Eşya Bağışı Yap</a>
+                </div>
+                
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $().UItoTop({ easingType: 'easeOutQuart' });
+
+        });
+    </script>
+    <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+</body>
+</html>

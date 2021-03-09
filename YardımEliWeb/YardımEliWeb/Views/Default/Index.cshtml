@@ -1,0 +1,200 @@
+﻿@model YardımEliWeb.Models.MyClass.HizmetVeHikayeler
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Yardım Eli | Anasayfa</title>
+    <link href="~/web/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <script src="~/web/js/jquery.min.js"></script>
+    <link href="~/web/css/style.css" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" type="text/css" href="~/web/css/magnific-popup.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    </script>
+    <script type="text/javascript" src="~/web/js/move-top.js"></script>
+    <script type="text/javascript" src="~/web/js/easing.js"></script>
+
+    <script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+    </script>
+
+    <link href='http://fonts.googleapis.com/css?family=Arimo:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700|Open+Sans:400italic,600italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="container">
+                <div class="logo">
+                    <a href="/Default/Index">
+                        <img src="~/web/images/logo.png" title="Help hand" />
+                        <h1>Yardım Eli</h1>
+                    </a>
+                </div>
+
+                <div class="top-nav">
+                    <span class="menu"> </span>
+                    <ul>
+                        <li class="active"><a href="/Default/Index">Anasayfa</a></li>
+                        <li><a href="/Bilgilendirme/Info">Bİlgİlendİrme</a></li>
+                        <li><a href="/Donater/BagisYap">Bağış</a></li>
+                        <li><a href="/AllDonates/DonateList">Yapılan Bağışlar</a></li>
+                        <div class="clearfix"> </div>
+                    </ul>
+                </div>
+                <script src="~/web/js/classie.js"></script>
+                <script src="~/web/js/uisearch.js"></script>
+                <script>
+                    new UISearch(document.getElementById('sb-search'));
+                </script>
+                <div class="clearfix"></div>
+            </div>
+
+            <script>
+                $(document).ready(function () {
+                    $("span.menu").click(function () {
+                        $(".top-nav ul").slideToggle(300);
+                    });
+                });
+            </script>
+
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <div class="banner">
+        <div class="slider-caption">
+            <h2>YARDIM ELİ SENİN İÇİN BURADA</h2>
+            <p>
+                Afetlerde gerek yardım toplamak , gerek afet hakkında bilgi vermek amacıyla Yardım Eli daima yanında..
+            </p>
+            <div class="learn-button">
+                <a class="slide-btn" href="/Donater/BagisYap">ŞİMDİ BAĞIŞ YAP</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="Stories-section">
+        <div class="container">
+            <div class="ad728x90" style="text-align:center">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:728px;height:90px"
+                     data-ad-client="ca-pub-9153409599391170"
+                     data-ad-slot="8639520288"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+
+            <h3>GERÇEK HİKAYELER</h3>
+            <div class="story-grids">
+                <!-- Modelimizin içindeki hikayeDeger'den tüm verileri çekiyor.-->
+                @foreach (var x in Model.hikayeDeger)
+                {
+                    <div class="story-grid one">
+                        <div class="col-md-9 story-grid-text">
+                            <p>
+                                <img src="~/web/images/u-qt.png" title="" />
+                                @x.storyAciklama
+                                <img src="~/web/images/d-qt.png" title="" />
+                            </p>
+                        </div>
+                        <div class="col-md-3 story-grid-img">
+                            <img src="~/web/images/logo.png" title="" />
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                }
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    <div class="parts-section">
+        <div class="container">
+            <div class="ad728x90" style="text-align:center">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:728px;height:90px"
+                     data-ad-client="ca-pub-9153409599391170"
+                     data-ad-slot="8639520288"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+
+            <div class="part-grids">
+                <!-- Modelimizin içindeki hizmetDeger'den tüm değişkenleri çekiyor.-->
+                @foreach (var h in Model.hizmetDeger)
+                {
+                    <div class="col-md-4 part-grid">
+                        <i class="@h.hizmetIcon"> </i>
+                        <h3>@h.hizmetBaslik</h3>
+                        <p>@h.hizmetAciklama </p>
+                        <a class="view-btn" href="@h.hizmetYol">DEVAMI</a>
+                    </div>
+                }
+                <div class="clearfix"> </div>
+            </div>
+            
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    </div>
+     
+    </div>
+    <script type="text/javascript" src="~/web/js/nivo-lightbox.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#nivo-lightbox-demo a').nivoLightbox({ effect: 'fade' });
+        });
+    </script>
+    </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+
+            <div class="footer-grids">
+                <div class="col-md-4 footer-grid-icons">
+                    <h3>Bİzİ Takİp Edİn:</h3>
+                    <ul>
+                        <li><a class="twitter" href="#"><span> </span></a></li>
+                        <li><a class="fb" href="#"><span> </span></a></li>
+                        <li><a class="you" href="#"><span> </span></a></li>
+                        <li><a class="in" href="#"><span> </span></a></li>
+                        <div class="clearfix"> </div>
+                    </ul>
+                </div>
+                <div class="col-md-4 footer-grid-text">
+                    <h3>Yapılan Tüm Bağışlara Teşekkür Ederiz...</h3>
+                    <p>Bağışlarınız bizim için çok önemli , yapılan tüm bağışlar için teşekkür ederiz ! </p>
+                    form method="post" action="contact-post.html">
+                    <a class="sign-btn" href="/Donater/BagisYap">BAĞIŞ YAP</a>
+                </div>
+
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {        
+            $().UItoTop({ easingType: 'easeOutQuart' });
+        });
+    </script>
+    <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+</body>
+</html>
+

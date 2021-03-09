@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbYardımEliDonatersModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblBilgilendirme">
+    <Key>
+      <PropertyRef Name="infoID" />
+    </Key>
+    <Property Name="infoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="infoGorsel" Type="varchar" MaxLength="500" />
+    <Property Name="infoBaslik" Type="nvarchar" MaxLength="150" />
+    <Property Name="infoAciklama" Type="nvarchar" MaxLength="1500" />
+    <Property Name="userID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblDonaters">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ad" Type="varchar" MaxLength="20" />
+    <Property Name="Soyad" Type="varchar" MaxLength="25" />
+    <Property Name="Eposta" Type="varchar" MaxLength="50" />
+    <Property Name="KrediKartNo" Type="varchar" MaxLength="20" />
+    <Property Name="Sehir" Type="varchar" MaxLength="30" />
+    <Property Name="Miktar" Type="int" />
+  </EntityType>
+  <EntityType Name="tblEsyaBagiscilari">
+    <Key>
+      <PropertyRef Name="esyaID" />
+    </Key>
+    <Property Name="esyaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ad" Type="nchar" MaxLength="30" />
+    <Property Name="Soyad" Type="nvarchar" MaxLength="30" />
+    <Property Name="Eposta" Type="nvarchar" MaxLength="50" />
+    <Property Name="BagisNesnesi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sehir" Type="nvarchar" MaxLength="50" />
+    <Property Name="TahminiDeger" Type="int" />
+    <Property Name="nakliyeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblHikayeler">
+    <Key>
+      <PropertyRef Name="storyID" />
+    </Key>
+    <Property Name="storyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="storyGorsel" Type="nvarchar" MaxLength="500" />
+    <Property Name="storyAciklama" Type="nvarchar" MaxLength="1000" />
+    <Property Name="userID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblHizmetler">
+    <Key>
+      <PropertyRef Name="hizmetID" />
+    </Key>
+    <Property Name="hizmetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="hizmetIcon" Type="nvarchar" MaxLength="50" />
+    <Property Name="hizmetBaslik" Type="nvarchar" MaxLength="50" />
+    <Property Name="hizmetAciklama" Type="nvarchar" MaxLength="500" />
+    <Property Name="hizmetYol" Type="nvarchar" MaxLength="100" />
+    <Property Name="userID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblKullanıcılar">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kullanıcıAdı" Type="nvarchar" MaxLength="50" />
+    <Property Name="kullanıcıSifre" Type="nvarchar" MaxLength="50" />
+    <Property Name="kullanıcıRol" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="tblNakliyeciler">
+    <Key>
+      <PropertyRef Name="nakliyeId" />
+    </Key>
+    <Property Name="nakliyeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="firmaAd" Type="nvarchar" MaxLength="50" />
+    <Property Name="firmaSehir" Type="nvarchar" MaxLength="30" />
+    <Property Name="firmaYetkiliAd" Type="nvarchar" MaxLength="30" />
+    <Property Name="firmaYetkiliSoyad" Type="nvarchar" MaxLength="30" />
+    <Property Name="kmBasinaUcret" Type="int" />
+    <Property Name="telefonNo" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityContainer Name="dbYardımEliDonatersModelStoreContainer">
+    <EntitySet Name="tblBilgilendirme" EntityType="Self.tblBilgilendirme" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblDonaters" EntityType="Self.tblDonaters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblEsyaBagiscilari" EntityType="Self.tblEsyaBagiscilari" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblHikayeler" EntityType="Self.tblHikayeler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblHizmetler" EntityType="Self.tblHizmetler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblKullanıcılar" EntityType="Self.tblKullanıcılar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblNakliyeciler" EntityType="Self.tblNakliyeciler" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

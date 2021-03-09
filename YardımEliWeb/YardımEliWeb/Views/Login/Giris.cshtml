@@ -1,0 +1,80 @@
+﻿@model YardımEliWeb.Models.Entity.tblKullanıcılar
+@{ 
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Giriş Paneli</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Flaty User login Form template Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login sign up Responsive web template, SmartPhone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Custom Theme files -->
+    <link href="~/web2/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- //Custom Theme files -->
+    <!-- js -->
+    <script src="~/web2/js/jquery-2.2.3.min.js"></script>
+    <!-- //js -->
+    <!-- web font -->
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'><!--web font-->
+    <!-- //web font -->
+</head>
+<body>
+    <!-- main -->
+    <div class="main-agileits">
+        <h1>Sadece Adminler Görebilir Lütfen Giriş Yap</h1>
+        <div class="mainw3-agileinfo form">
+            @using (Html.BeginForm("Giris", "Login", FormMethod.Post))
+            {
+                <div class="field-wrap">
+                    <label> Email Adresiniz<span class="req">*</span> </label>
+                    <input type="email" required autocomplete="off" name="kullanıcıAdı"/>
+                </div>
+                <div class="field-wrap">
+                    <label> Parolanız<span class="req">*</span> </label>
+                    <input type="password" required autocomplete="off" name="kullanıcıSifre"/>
+                </div>
+                <p class="forgot"><a href="#">Şifremi Unuttum</a></p>
+                <button class="button button-block">Gİrİş Yap</button>
+            }
+        </div>
+    </div>
+    <!-- //main -->
+    <!-- copyright -->
+    <div class="w3copyright-agile">
+        <p>© 2021 Yardım Eli | Tüm hakları saklıdır.</p>
+    </div>
+    <!-- //copyright -->
+    <script>
+        $('.form').find('input, textarea').on('keyup blur focus', function (e) {
+            var $this = $(this),
+                label = $this.prev('label');
+
+            if (e.type === 'keyup') {
+                if ($this.val() === '') {
+                    label.removeClass('active highlight');
+                } else {
+                    label.addClass('active highlight');
+                }
+            } else if (e.type === 'blur') {
+                if ($this.val() === '') {
+                    label.removeClass('active highlight');
+                } else {
+                    label.removeClass('highlight');
+                }
+            } else if (e.type === 'focus') {
+
+                if ($this.val() === '') {
+                    label.removeClass('highlight');
+                }
+                else if ($this.val() !== '') {
+                    label.addClass('highlight');
+                }
+            }
+
+        });
+    </script>
+</body>
+</html>

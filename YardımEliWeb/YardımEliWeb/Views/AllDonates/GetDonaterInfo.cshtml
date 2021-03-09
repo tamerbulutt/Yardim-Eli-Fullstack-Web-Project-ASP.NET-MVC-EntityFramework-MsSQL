@@ -1,0 +1,37 @@
+﻿@model  YardımEliWeb.Models.Entity.tblDonaters
+@{
+    ViewBag.Title = "Yardım Eli - Bağışçı Bilgisi Güncelle";
+}
+
+<h1 class="text-success text-center">BAĞIŞÇI BİLGİLERİNİ GÜNCELLE</h1>
+
+@using (Html.BeginForm("Update", "AllDonates", FormMethod.Post))
+{
+<div class="form-group col-lg-4 col-lg-offset-4">
+
+    @Html.LabelFor(d => d.ID)
+    @Html.TextBoxFor(d => d.ID, new { @class = "form-control" , @readonly=true})
+    <br />
+    @Html.LabelFor(d => d.Ad)
+    @Html.TextBoxFor(d => d.Ad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(d => d.Soyad)
+    @Html.TextBoxFor(d => d.Soyad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(d => d.Eposta)
+    @Html.TextBoxFor(d => d.Eposta, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(d => d.KrediKartNo)
+    @Html.TextBoxFor(d => d.KrediKartNo, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(d => d.Sehir)
+    @Html.TextBoxFor(d => d.Sehir, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(d => d.Miktar)
+    @Html.TextBoxFor(d => d.Miktar, new { @class = "form-control" })
+
+</div>
+<div class="col-lg-4 col-lg-offset-4">
+    <button class="btn btn-warning">Bağışçı Bilgilerini Güncelle</button>
+</div>
+}

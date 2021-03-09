@@ -1,0 +1,103 @@
+﻿@model List<YardımEliWeb.Models.Entity.tblDonaters>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <title>Yapılan Bağışlar | Yardım Eli</title>
+    <!--meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Nomad Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+      Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script>
+      addEventListener("load", function () {
+      	setTimeout(hideURLbar, 0);
+      }, false);
+
+      function hideURLbar() {
+      	window.scrollTo(0, 1);
+      }
+    </script>
+    <!--//meta tags ends here-->
+    <!--booststrap-->
+    <link href="~/web3/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+    <!--//booststrap end-->
+    <!-- font-awesome icons -->
+    <link href="~/web3/css/fontawesome-all.min.css" rel="stylesheet" type="text/css" media="all">
+    <!-- //font-awesome icons -->
+    <!--stylesheets-->
+    <link href="~/web3/css/style.css" rel='stylesheet' type='text/css' media="all">
+    <!--//stylesheets-->
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,500,600" rel="stylesheet">
+</head>
+<body>
+    <!-- //banner -->
+    <section class="w3l-banner">
+        <div class="nav-sec  position-relative">
+            <ul id="menu">
+                <li>
+                    <input id="check01" type="checkbox" name="menu" />
+                    <label class="menulist" for="check01">&nbsp;</label>
+                    <ul class="submenu">
+                        <li><a href="/Default/Index" class="active">Anasayfa</a></li>
+                        <li><a href="/Bilgilendirme/Info">Bilgilendirme</a></li>
+                        <li><a href="/Donater/BagisYap" class="scroll">Bağış Yap</a></li>
+                        <li><a href="/Nakliye/NakliyeciEkle" class="scroll">Nakliye Firması Ekle</a></li>
+                        <li><a href="/AllDonates/DonateList" class="scroll">Yapılan Bağışlar</a></li>
+                        <li><a href="/AllDonates/Logout" class="scroll">Çıkış Yap</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="baner-text text-center">
+                <span class="fa fa-files-o mb-4 tp_bt"></span>
+                <h1 class="mx-auto">Bu zor günlerde bizlere destek çıkan bağışçılarımızın listesi aşağıdadır.</h1>
+                <p class="mx-auto mt-4 pt-2">Tüm bağışçılarımıza teşekkür eder, minnetlerimizi sunarız.</p>
+                <a class="btn btn-primary mt-lg-5 mt-3 agile-link-bnr scroll" href="#about" role="button">Bağışçıları Gör</a>
+                <div class="mt-5 btmarw">
+                    <a class="scroll" href="#about" role="button"><span class="fa fa-long-arrow-down bt-ar"></span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Modelimizin içinden tüm verileri çekiyor.-->
+    @foreach (var donater in Model)
+    {
+        <section class="banner-bottom py-5" id="about">
+            <div class="container py-lg-5">
+                <div class="banner-top row middle-grids">
+                    <div class="col-lg-6 advantage-grid-info">
+                        <div class="advantage_left">
+                            <h3>@donater.Ad @donater.Soyad</h3>
+                            <p class="mt-4">Bağışçı Eposta Adresi : @donater.Eposta</p>
+                            <p class="mt-4">Bağışçı Kredi Kart No : @donater.KrediKartNo</p>
+                            <p class="mt-4">Bağışçının Yaşadığı Şehir  : @donater.Sehir</p>
+                            <p class="mt-4">Bağış Miktarı :  @donater.Miktar TL</p>
+                            <td><a href="/AllDonates/Delete/@donater.ID" class="btn btn-danger">SİL</a></td>
+                            <td><a href="/AllDonates/GetDonaterInfo/@donater.ID" class="btn btn-success">GÜNCELLE</a></td>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 advantage-grid-info1">
+                        <div class="advantage_left2 text-center">
+                            <img src="~/web3/images/g6.jpg" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+
+    <div class="cpy-right text-center py-4 px-2">
+        <p class="text-white">
+            © 2021 Yardım Eli Tüm hakları saklıdır.
+        </p>
+    </div>
+    <!-- //footer -->
+
+</body>
+</html>
